@@ -40,7 +40,7 @@ public class PlayerMove : MonoBehaviour
         }
         myRigidbody.velocity = velocity;
         myAnimator.SetFloat("Speed", myRigidbody.velocity.magnitude);
-        if (velocity.x < 0) GetComponent<SpriteRenderer>().flipX = false;
-        else GetComponent<SpriteRenderer>().flipX = true;
+        if (velocity.x < 0) GetComponent<SpriteRenderer>().flipX = true;
+        else if (velocity.x > 0.1f) GetComponent<SpriteRenderer>().flipX = false;
     }
 }
